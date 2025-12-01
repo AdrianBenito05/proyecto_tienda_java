@@ -1,0 +1,38 @@
+package com.adrian.clienteservidor.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.adrian.clienteservidor.setup.SetUp;
+
+// controlador que atiende la ruta de inicio y muestra la vista tienda.html
+
+@Controller
+public class InicioController {
+	
+	@Autowired
+	private SetUp setup;
+	
+	@Autowired
+	private MessageSource messageSource;
+	
+	
+//	este request mapping vacio, atiende la ruta por defecto de la aplicacion
+	@RequestMapping()
+	public String Inicio() {
+		// aprovechamos y llamamos a la operacion para hacer el setUp inicial
+		setup.prepararRegistros();
+		//vamos a obtener el codigo de idioma actual
+		//y devolver una vista distinta para la parte publica segun el mismo
+		String idiomaActual = 
+				messageSource.getMessage("idioma", null, LocaleContextHolder.getLocale()).trim();
+		
+		System.out.println("idiomaActual: " + idiomaActual);
+		
+		return "tienda_"+idiomaActual;
+	}
+
+}

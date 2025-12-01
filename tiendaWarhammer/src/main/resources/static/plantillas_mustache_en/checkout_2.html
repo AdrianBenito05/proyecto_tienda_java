@@ -1,0 +1,19 @@
+<div>Place Order - Step 2</div>
+<div>Enter payment details: <br>
+(Do not enter real data, application in testing) <br>
+<form id="aceptar_paso_2">
+
+	Card Type
+	<select id="tipo_tarjeta">
+		<option value="0">Select type</option>
+		<option value="1">VISA</option>
+		<option value="2">Master card</option>
+	</select>
+	<br>
+	Card Number <input type="text" id="numero_tarjeta" required="required" maxlength="16" pattern="\d{16}" > <br>
+	Cardholder Name <input type="text" id="titular_tarjeta" required="required">
+	<br>
+
+<input type="submit" style="padding: 10px" value="Submit"/>
+</form>
+</div>

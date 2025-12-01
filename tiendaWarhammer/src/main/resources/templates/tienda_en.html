@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/inicio.css">
+
+</head>
+<body>
+
+<div class="header-top">
+  <a class="admin-link" href="admin/obtenerProductos">Enter administration</a>
+  <div id="login_usuario">Unidentified
+   user</div>
+</div>
+
+<div class="welcome-banner">
+  Welcome to the store
+</div>
+
+    <div class="nav-menu">
+  	<a href="?idioma=es">SPANISH</a>
+  	<a href="?idioma=en">ENGLISH</a>
+  	<a href="?idioma=ch">CHINESE</a>
+  	
+  </div>
+
+<div class="nav-menu">
+  <a id="enlace_productos" href="#">Products</a>
+  <a id="enlace_identificarme" href="#">Log in</a>
+  <a id="enlace_registrarme" href="#">Sign in</a>
+  <a  id="enlace_carrito" href="#">Cart</a>
+</div>
+
+
+<div id="contenedor">
+
+</div>
+
+
+<!-- Incluir los archivos de Javascript necesarios -->
+<script  src="librerias_js/jquery.js" ></script>
+<script  src="librerias_js/mustache.js"></script>
+<script  src="javascript/globales.js"></script>
+<script type="text/javascript">
+	idioma = "_en"
+
+</script>
+
+<script  src="javascript/cargar_plantillas.js"></script>
+<script  src="javascript/funciones_menu.js"></script>
+<script  src="javascript/main.js"></script>
+
+
+
+
+</body>
+</html>

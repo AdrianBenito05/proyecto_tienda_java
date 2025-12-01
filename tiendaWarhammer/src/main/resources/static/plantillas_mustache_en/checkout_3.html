@@ -1,0 +1,28 @@
+<div>Realizar pedido - Paso 3</div>
+
+<div id="pregunta_faccion">
+  <p>¿Cuál es tu facción favorita en Warhammer?</p>
+  <select id="faccion_favorita">
+    <option value="0">Selecciona una facción...</option>
+    <option value="space_marines">Space Marines</option>
+    <option value=Chaos>Orkos</option>
+    <option value="chaos">Caos</option>
+    <option value="eldar">Eldar</option>
+  </select>
+  <br><br>
+
+  <!-- Inputs de puntuación para cada producto -->
+  <div id="productos_a_valorar">
+    {{#array_productos}}
+    <div class="producto_valorar">
+      <p>{{NOMBRE}}</p>
+      <input type="number" class="puntuacion_producto" 
+             data-id-producto="{{PRODUCTO_ID}}" 
+             name="puntuacion_{{PRODUCTO_ID}}" 
+             min="0" max="5" step="0.1" placeholder="Ej: 4.5">
+    </div>
+    {{/array_productos}}
+  </div>
+
+  <button style="padding: 10px" id="aceptar_paso_3">Aceptar</button>
+</div>

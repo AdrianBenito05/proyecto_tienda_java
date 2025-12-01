@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Administración - Login</title>
+<link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+
+<div class="login-container">
+  <h2 class="login-title">Administración</h2>
+  <div class="login-subtitle">Identifícate para poder entrar en administración</div>
+  
+  <div class="mensaje-error" th:text="${mensaje}"></div>
+  
+  <form action="admin/obtenerProductos" method="post">
+    <label for="pass-admin">Contraseña:</label>
+    <input type="password" name="pass-admin" id="pass-admin" placeholder="Introduce tu contraseña">
+    <input type="submit" value="Iniciar Sesión">
+  </form>
+</div>
+
+</body>
+</html>

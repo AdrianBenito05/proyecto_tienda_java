@@ -1,0 +1,18 @@
+<div>商店产品列表</div>
+
+<!-- asi muestro variables -->
+{{ mensaje_bienvenida }}
+
+<!-- asi muestro arays -->
+{{ #array_productos }}
+	<div>
+		名称：{{NOMBRE}} <br>
+        价格：{{PRECIO}} <br>
+        描述：{{DESCRIPCION}} <br>
+        <img src="mostrar_imagen?id={{ ID }}" alt="图片未能加载" /> <br>
+        尺寸：{{MEDIDAS}} <br>
+        制造商：{{FABRICANTE}} <br>
+        材料：{{MATERIAL}} <br>
+        <a href="#" class="enlace_comprar_producto" id-producto="{{ ID }}">加入购物车</a>
+	</div>
+{{ /array_productos }}

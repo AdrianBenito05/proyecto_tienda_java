@@ -1,0 +1,22 @@
+
+
+<div>Realizar Pedido - Paso 2</div>
+<div>Introduce los datos de pago: <br>
+( No introducir datos reales, aplicacion en pruebas ) <br>
+<form id="aceptar_paso_2">
+
+	Tipo tarjeta
+	<select id="tipo_tarjeta">
+		<option value="0">Elegir tipo</option>
+		<option value="1">VISA</option>
+		<option value="2">Master card</option>
+		
+	</select>
+	<br>
+	Numero de la tajerta <input type="text" id="numero_tarjeta" required="required" maxlength="16" pattern="\d{16}" > <br>
+	Titular de la tajerta <input type="text" id="titular_tarjeta" required="required">
+	 <br>
+
+<input type="submit" style="padding: 10px"  value="Aceptar"/>
+</form>
+	</div>

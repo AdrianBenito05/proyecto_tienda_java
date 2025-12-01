@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Insert title here</title>
+  <link rel="stylesheet" th:href="@{../css/admin.css}">
+ <link rel="stylesheet" th:href="@{/css/menu.css}">
+
+</head>
+<body>
+  <div th:insert="fragments/general.html :: menu"></div>
+
+  <div id="contenedor">
+
+    <div>
+      <div th:each="usuario : ${usuarios}" class="usuarios">
+        <div>Nombre: <span th:text="${usuario.nombre}"></span></div>
+        <div>Email: <span th:text="${usuario.email}"></span></div>
+        <div>CP: <span th:text="${usuario.cp}"></span></div>
+        <div>Localidad: <span th:text="${usuario.localidad}"></span></div>
+
+        <div>
+          <a th:href="@{${ 'borrarUsuario?id=' + usuario.id }}" onclick="return confirm('¿seguro?')">BORRAR</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

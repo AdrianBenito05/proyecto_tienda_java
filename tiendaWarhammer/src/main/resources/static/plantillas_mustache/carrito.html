@@ -1,0 +1,20 @@
+<div style="text-align: center">Carrito de la compra</div>
+
+<div style="background-color: yellow;">
+
+{{#.}}
+	<div style="margin: 25px ">
+		Nombre: {{NOMBRE}} <br>
+		Precio: {{PRECIO}} <br>
+		<img src="mostrar_imagen?id={{ PRODUCTO_ID }}" alt="No ha cargado la imagen" height="300px"  /> <br>
+		Cantidad: {{CANTIDAD}} <br>
+		Descripcion: {{DESCRIPCION}}
+		<a id-producto="{{PRODUCTO_ID}}" class="enlace-borrar-producto-carrito"  href="#">Eliminar del carrito</a>
+	</div>
+
+{{/.}}
+	<a href="#" id="realizar_pedido" style="width: 100%">Realizar pedido</a>
+</div>
+
+
+

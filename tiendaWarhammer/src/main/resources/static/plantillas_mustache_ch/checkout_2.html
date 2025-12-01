@@ -1,0 +1,19 @@
+<div>下订单 - 第 2 步</div>
+<div>请输入付款信息：<br>
+（请勿输入真实数据，应用程序正在测试中）<br>
+<form id="aceptar_paso_2">
+
+    卡片类型
+    <select id="tipo_tarjeta">
+        <option value="0">选择类型</option>
+        <option value="1">VISA</option>
+        <option value="2">万事达卡</option>
+    </select>
+    <br>
+    卡号 <input type="text" id="numero_tarjeta" required="required" maxlength="16" pattern="\d{16}" > <br>
+    持卡人姓名 <input type="text" id="titular_tarjeta" required="required">
+    <br>
+
+    <input type="submit" style="padding: 10px" value="确认"/>
+</form>
+</div>

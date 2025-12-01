@@ -1,0 +1,922 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Spectral:wght@600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0f0f 100%);
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Spectral', serif;
+  color: #e8d4a0;
+}
+/* ========== ESTILOS PARA GESTIÓN DE USUARIOS ========== */
+
+/* Tarjeta de usuario */
+.usuarios {
+  background: linear-gradient(135deg, rgba(40,20,20,0.9) 0%, rgba(60,30,30,0.9) 100%);
+  border: 2px solid #8b6914;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.usuarios::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.usuarios:hover {
+  border-color: #d4af37;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+  transform: translateY(-5px);
+}
+
+.usuarios:hover::before {
+  opacity: 1;
+}
+
+/* Información del usuario */
+.usuarios > div:not(:last-child) {
+  margin-bottom: 12px;
+  color: #e8d4a0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.usuarios > div span {
+  color: #c9b37d;
+  font-weight: 400;
+}
+
+/* Contenedor de acciones del usuario */
+.usuarios > div:last-child {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(139, 105, 20, 0.5);
+}
+
+/* Botón BORRAR para usuarios */
+.usuarios > div:last-child a {
+  flex: 1;
+  text-align: center;
+  font-family: 'Spectral', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ff6b6b;
+  padding: 10px 15px;
+  border: 2px solid #8b6914;
+  background: linear-gradient(135deg, rgba(80,20,20,0.8) 0%, rgba(100,30,30,0.8) 100%);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.usuarios > div:last-child a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.4s ease;
+}
+
+.usuarios > div:last-child a:hover {
+  background: linear-gradient(135deg, rgba(100,30,30,0.9) 0%, rgba(120,40,40,0.9) 100%);
+  border-color: #ff6b6b;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  transform: translateY(-2px);
+}
+
+.usuarios > div:last-child a:hover::before {
+  left: 100%;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+  
+  h3 {
+    font-size: 1.1rem;
+    padding: 10px 15px;
+  }
+  
+  .producto > div:last-child {
+    flex-direction: column;
+  }
+  
+  .producto > div:last-child a {
+    width: 100%;
+  }
+  
+  body > div:not(#contenedor) {
+    padding: 15px;
+  }
+  
+  .usuarios {
+    padding: 20px;
+  }
+  
+  .usuarios > div:last-child {
+    flex-direction: column;
+  }
+  
+  .usuarios > div:last-child a {
+    width: 100%;
+  }
+}
+/* ========== ESTILOS PARA FORMULARIOS ========== */
+
+/* Texto introductorio del formulario */
+body > form + text,
+body > div + text {
+  display: block;
+  font-family: 'Cinzel', serif;
+  color: #d4af37;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin: 30px auto;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #8b6914;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  position: relative;
+  max-width: 1200px;
+}
+
+/* Formularios */
+form {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(40,20,20,0.9) 0%, rgba(60,30,30,0.9) 100%);
+  border: 2px solid #8b6914;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  border-radius: 8px;
+  position: relative;
+  color: #e8d4a0;
+  font-family: 'Spectral', serif;
+  line-height: 2;
+}
+
+form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+/* Inputs de texto y número */
+form input[type="text"],
+form input[type="number"],
+form textarea {
+  font-family: 'Spectral', serif;
+  font-size: 1rem;
+  color: #e8d4a0;
+  background: rgba(20,10,10,0.6);
+  border: 2px solid #8b6914;
+  padding: 12px 15px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  border-radius: 5px;
+  min-width: 300px;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form textarea:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+  background: rgba(30,15,15,0.7);
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 80px;
+  display: block;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Select */
+form select {
+  font-family: 'Spectral', serif;
+  font-size: 1rem;
+  color: #d4af37;
+  background: linear-gradient(135deg, rgba(40,20,20,0.9) 0%, rgba(60,30,30,0.9) 100%);
+  border: 2px solid #8b6914;
+  padding: 12px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  border-radius: 5px;
+  min-width: 250px;
+}
+
+form select:hover {
+  border-color: #d4af37;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+form select:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+form select option {
+  background: #1a0f0f;
+  color: #e8d4a0;
+  padding: 10px;
+}
+
+/* Input file */
+form input[type="file"] {
+  font-family: 'Spectral', serif;
+  font-size: 0.9rem;
+  color: #e8d4a0;
+  background: rgba(20,10,10,0.6);
+  border: 2px solid #8b6914;
+  padding: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  border-radius: 5px;
+}
+
+form input[type="file"]::file-selector-button {
+  font-family: 'Spectral', serif;
+  font-weight: 600;
+  color: #d4af37;
+  background: linear-gradient(135deg, rgba(20,60,20,0.8) 0%, rgba(30,80,30,0.8) 100%);
+  border: 2px solid #8b6914;
+  padding: 8px 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+form input[type="file"]::file-selector-button:hover {
+  background: linear-gradient(135deg, rgba(30,80,30,0.9) 0%, rgba(40,100,40,0.9) 100%);
+  border-color: #d4af37;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+}
+
+/* Imagen en formulario de edición */
+form img {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 2px solid #8b6914;
+  margin: 20px auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+}
+
+form img:hover {
+  border-color: #d4af37;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transform: scale(1.02);
+}
+
+/* Mensajes de error */
+form span[style*="color:red"] {
+  color: #ff6b6b !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: block;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* Botón submit */
+form input[type="submit"] {
+  font-family: 'Spectral', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #d4af37;
+  padding: 15px 40px;
+  border: 2px solid #8b6914;
+  background: linear-gradient(135deg, rgba(20,60,20,0.8) 0%, rgba(30,80,30,0.8) 100%);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  cursor: pointer;
+  display: block;
+  margin: 30px auto 0;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  min-width: 300px;
+}
+
+form input[type="submit"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.4s ease;
+}
+
+form input[type="submit"]:hover {
+  background: linear-gradient(135deg, rgba(30,80,30,0.9) 0%, rgba(40,100,40,0.9) 100%);
+  border-color: #d4af37;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transform: translateY(-2px);
+}
+
+form input[type="submit"]:hover::before {
+  left: 100%;
+}
+
+/* Responsive para formularios */
+@media (max-width: 768px) {
+  form {
+    padding: 25px;
+    margin: 20px;
+  }
+  
+  form input[type="text"],
+  form input[type="number"],
+  form select,
+  form input[type="file"] {
+    min-width: 100%;
+    margin-left: 0;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  form img {
+    height: 200px;
+  }
+  
+  form input[type="submit"] {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  form {
+    padding: 20px;
+  }
+  
+  form input[type="submit"] {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
+/* ========== TÍTULOS ========== */
+h2, h3 {
+  font-family: 'Cinzel', serif;
+  color: #d4af37;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 30px 0;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #8b6914;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: #d4af37;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, rgba(40,20,20,0.8) 0%, rgba(60,30,30,0.8) 100%);
+  border-left: 4px solid #d4af37;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* ========== CONTENEDOR PRINCIPAL ========== */
+#contenedor, body > div:not(#contenedor) {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  min-height: 300px;
+}
+
+/* ========== ENLACES/BOTONES PRINCIPALES ========== */
+#contenedor > a:first-child, 
+body > a {
+  display: inline-block;
+  font-family: 'Spectral', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #d4af37;
+  padding: 12px 24px;
+  border: 2px solid #8b6914;
+  background: linear-gradient(135deg, rgba(20,60,20,0.8) 0%, rgba(30,80,30,0.8) 100%);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+#contenedor > a:first-child:hover,
+body > a:hover {
+  background: linear-gradient(135deg, rgba(30,80,30,0.9) 0%, rgba(40,100,40,0.9) 100%);
+  border-color: #d4af37;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ========== GRID DE PRODUCTOS ========== */
+#contenedor > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* ========== TARJETA DE PRODUCTO ========== */
+.producto {
+  background: linear-gradient(135deg, rgba(40,20,20,0.9) 0%, rgba(60,30,30,0.9) 100%);
+  border: 2px solid #8b6914;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.producto::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.producto:hover {
+  border-color: #d4af37;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+  transform: translateY(-5px);
+}
+
+.producto:hover::before {
+  opacity: 1;
+}
+
+/* ========== INFORMACIÓN DEL PRODUCTO ========== */
+.producto > div:not(:last-child) {
+  margin-bottom: 12px;
+  color: #e8d4a0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.producto > div span {
+  color: #c9b37d;
+  font-weight: 400;
+}
+
+/* ========== IMAGEN DEL PRODUCTO ========== */
+.producto img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 5px;
+  border: 2px solid #8b6914;
+  margin: 15px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+}
+
+.producto img:hover {
+  border-color: #d4af37;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transform: scale(1.02);
+}
+
+/* ========== CONTENEDOR DE ACCIONES (BOTONES) ========== */
+.producto > div:last-child {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(139, 105, 20, 0.5);
+}
+
+/* ========== ENLACES DE ACCIÓN (BORRAR Y EDITAR) ========== */
+.producto > div:last-child a {
+  flex: 1;
+  text-align: center;
+  font-family: 'Spectral', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #e8d4a0;
+  padding: 10px 15px;
+  border: 2px solid #8b6914;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.producto > div:last-child a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.4s ease;
+}
+
+.producto > div:last-child a:hover::before {
+  left: 100%;
+}
+
+/* Botón BORRAR */
+.producto > div:last-child a:first-child {
+  background: linear-gradient(135deg, rgba(80,20,20,0.8) 0%, rgba(100,30,30,0.8) 100%);
+  color: #ff6b6b;
+}
+
+.producto > div:last-child a:first-child:hover {
+  background: linear-gradient(135deg, rgba(100,30,30,0.9) 0%, rgba(120,40,40,0.9) 100%);
+  border-color: #ff6b6b;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Botón EDITAR */
+.producto > div:last-child a:last-child {
+  background: linear-gradient(135deg, rgba(20,60,20,0.8) 0%, rgba(30,80,30,0.8) 100%);
+  color: #90ee90;
+}
+
+.producto > div:last-child a:last-child:hover {
+  background: linear-gradient(135deg, rgba(30,80,30,0.9) 0%, rgba(40,100,40,0.9) 100%);
+  border-color: #90ee90;
+  box-shadow: 0 4px 15px rgba(144, 238, 144, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ========== SECCIONES DE DETALLES DE PEDIDO ========== */
+body > div:not(#contenedor):not([style*="margin"]) {
+  background: linear-gradient(135deg, rgba(40,20,20,0.7) 0%, rgba(60,30,30,0.7) 100%);
+  border: 2px solid #8b6914;
+  padding: 30px;
+  margin: 20px auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  line-height: 1.8;
+  font-size: 1rem;
+  border-radius: 8px;
+  position: relative;
+  max-width: 1200px;
+}
+
+body > div:not(#contenedor):not([style*="margin"])::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+/* ========== TEXTO EN DETALLES DE PEDIDO ========== */
+body > div:not(#contenedor):not([style*="margin"]) span {
+  color: #d4af37;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+body > div:not(#contenedor):not([style*="margin"]) br {
+  line-height: 2;
+}
+
+/* ========== CADA PRODUCTO EN EL PEDIDO ========== */
+body > div:not(#contenedor):not([style*="margin"]) > div[style*="margin"] {
+  background: rgba(20,10,10,0.6);
+  padding: 20px;
+  margin: 15px 0 !important;
+  border-left: 3px solid #8b6914;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+body > div:not(#contenedor):not([style*="margin"]) > div[style*="margin"]:hover {
+  border-left-color: #d4af37;
+  background: rgba(30,15,15,0.7);
+  transform: translateX(5px);
+}
+
+/* ========== CONTENEDOR DEL SELECT DE ESTADO ========== */
+body > div[style*="margin"] {
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+/* Div específico que contiene el texto "Estado del pedido" */
+body > div[style*="margin: 15px"] {
+  background: linear-gradient(135deg, rgba(40,20,20,0.7) 0%, rgba(60,30,30,0.7) 100%);
+  border: 2px solid #8b6914;
+  padding: 20px 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  border-radius: 8px;
+  max-width: 1200px;
+  margin: 20px auto !important;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e8d4a0;
+}
+
+/* ========== SELECT DE ESTADO ========== */
+select, #select_estado {
+  font-family: 'Spectral', serif;
+  font-size: 1rem;
+  color: #d4af37;
+  background: linear-gradient(135deg, rgba(40,20,20,0.9) 0%, rgba(60,30,30,0.9) 100%);
+  border: 2px solid #8b6914;
+  padding: 12px 20px;
+  margin: 15px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  border-radius: 5px;
+  min-width: 250px;
+}
+
+select:hover, #select_estado:hover {
+  border-color: #d4af37;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+select:focus, #select_estado:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+select option {
+  background: #1a0f0f;
+  color: #e8d4a0;
+  padding: 10px;
+}
+
+/* ========== INPUT HIDDEN ========== */
+input[type="hidden"] {
+  display: none;
+}
+
+/* ========== LISTADO DE PEDIDOS ========== */
+body > div[style*="margin"]:not([id]) {
+  background: linear-gradient(135deg, rgba(40,20,20,0.85) 0%, rgba(60,30,30,0.85) 100%);
+  border: 2px solid #8b6914;
+  padding: 25px;
+  margin: 20px auto !important;
+  max-width: 1200px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  border-radius: 8px;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+body > div[style*="margin"]:not([id])::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+body > div[style*="margin"]:not([id]):hover {
+  border-color: #d4af37;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+  transform: translateY(-3px);
+}
+
+body > div[style*="margin"]:not([id]):hover::before {
+  opacity: 1;
+}
+
+/* Espaciado entre líneas del pedido */
+body > div[style*="margin"]:not([id]) br {
+  line-height: 2.2;
+}
+
+/* Enlaces "Ver detalles" dentro de cada pedido */
+body > div[style*="margin"]:not([id]) > a {
+  display: inline-block;
+  font-family: 'Spectral', serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #d4af37;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border: 2px solid #8b6914;
+  background: linear-gradient(135deg, rgba(20,60,20,0.8) 0%, rgba(30,80,30,0.8) 100%);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+body > div[style*="margin"]:not([id]) > a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.4s ease;
+}
+
+body > div[style*="margin"]:not([id]) > a:hover {
+  background: linear-gradient(135deg, rgba(30,80,30,0.9) 0%, rgba(40,100,40,0.9) 100%);
+  border-color: #d4af37;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transform: translateY(-2px);
+}
+
+body > div[style*="margin"]:not([id]) > a:hover::before {
+  left: 100%;
+}
+
+/* ========== TÍTULO "LISTADO DE PEDIDOS" ========== */
+body {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+body::before {
+  content: none;
+}
+
+/* Estilo para texto directo en body (como "Listado de Pedidos:") */
+body > text,
+body > * {
+  font-size: 1rem;
+}
+
+/* Si "Listado de Pedidos:" está como texto directo, envolver visualmente */
+body {
+  padding-top: 80px;
+}
+
+#contenedor > div:empty::after {
+  content: 'No hay productos registrados';
+  display: block;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #d4af37;
+  font-family: 'Cinzel', serif;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, rgba(40,20,20,0.6) 0%, rgba(60,30,30,0.6) 100%);
+  border: 2px dashed #8b6914;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+  
+  #contenedor > div {
+    grid-template-columns: 1fr;
+  }
+  
+  .producto {
+    padding: 20px;
+  }
+  
+  .producto img {
+    height: 200px;
+  }
+  
+  body > div:not(#contenedor) {
+    padding: 20px;
+  }
+  
+  select, #select_estado {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+  
+  h3 {
+    font-size: 1.1rem;
+    padding: 10px 15px;
+  }
+  
+  .producto > div:last-child {
+    flex-direction: column;
+  }
+  
+  .producto > div:last-child a {
+    width: 100%;
+  }
+  
+  body > div:not(#contenedor) {
+    padding: 15px;
+  }
+}

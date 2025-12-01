@@ -1,0 +1,50 @@
+
+
+<div>Realizar Pedido - Paso 3</div>
+<div>Resumen del pedido:
+
+<br>
+
+<div>Productos del pedido: 
+	{{#productos}}
+			Nombre: {{NOMBRE}} <br>
+			<img src="mostrar_imagen?id={{ PRODUCTO_ID }}" alt="No ha cargado la imagen" height="300px"  /> <br>
+			Precio: {{PRECIO}} <br>
+			Cantidad: {{CANTIDAD}} <br>
+	{{/productos}}
+</div>
+
+<br>
+
+<div>Datos de envio: </div>
+<div style="margin: 10px">
+	Nombre completo: {{nombreCompleto}}
+	<br>
+	Direccion: {{direccion}}
+	<br>	
+	Provincia: {{provincia}}
+	<br>	
+	Portal: {{portal}}
+	<br>	
+	Piso: {{piso}}
+	<br>
+	Telefono: {{telefono}}
+	
+	
+</div>
+
+<div>Datos de pago: </div>
+<div style="margin: 10px">
+	Tipo tarjeta: {{tipoTarjeta}}
+	<br>
+	Titular tarjeta: {{titularTarjeta}}
+	<br>
+	Numero tarjeta: {{numeroTarjetaMasked}}
+	
+</div>
+<div>Faccion favorita</div>
+<div style="margin: 10px">
+	Faccion favorita: {{faccion}}
+	</div>
+	<button style="padding: 10px" id="boton_confirmar_pedido">Confirmar pedido</button>
+	</div>

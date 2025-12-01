@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Listado de Pedidos</title>
+<link rel="stylesheet" th:href="@{/css/menu.css}">
+<link rel="stylesheet" th:href="@{/css/admin.css}">
+
+</head>
+<body>
+
+<div th:insert="fragments/general.html :: menu"></div>
+
+<h2 style="text-align: center">Listado de Pedidos</h2>
+
+<div th:each="pedido: ${pedidos}" style="margin: 15px">
+	Nombre completo: <span th:text="${pedido.nombreCompleto}"></span> <br>
+	Direccion: <span th:text="${pedido.direccion}"></span><br>
+	Provincia: <span th:text="${pedido.provincia}"></span><br>
+	Portal: <span th:text="${pedido.portal}"></span><br>
+	Piso: <span th:text="${pedido.piso}"></span><br>
+	Telefono: <span th:text="${pedido.telefono}"></span><br>
+	Estado: <span th:text="${pedido.estado}"></span><br>
+	<a th:href="@{${ 'verDetallesPedido?id=' + pedido.id}} " >Ver detalles</a>
+</div>
+
+</body>
+</html>

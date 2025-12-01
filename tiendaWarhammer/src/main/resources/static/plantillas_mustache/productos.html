@@ -1,0 +1,21 @@
+<div>Listado de productos de la tienda</div>
+
+<!-- Mensaje de bienvenida -->
+{{ mensaje_bienvenida }}
+
+<!-- Listado de productos -->
+{{ #array_productos }}
+<div class="producto">
+    <p><strong>Nombre:</strong> {{NOMBRE}}</p>
+    <p><strong>Precio:</strong> {{PRECIO}}</p>
+    <p><strong>Descripción:</strong> {{DESCRIPCION}}</p>
+    <img src="mostrar_imagen?id={{ ID }}" alt="No ha cargado la imagen" />
+    <p><strong>Medidas:</strong> {{MEDIDAS}}</p>
+    <p><strong>Fabricante:</strong> {{FABRICANTE}}</p>
+    <p><strong>Material:</strong> {{MATERIAL}}</p>
+    <p><strong>Categoría:</strong> {{NOMBRE_CATEGORIA}}</p>
+    <p><strong>Puntuación:</strong> {{mediaValoraciones}}</p>
+    
+    <a href="#" class="enlace_comprar_producto" id-producto="{{ ID }}">AÑADIR AL CARRITO</a>
+</div>
+{{ /array_productos }}

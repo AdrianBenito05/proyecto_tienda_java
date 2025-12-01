@@ -1,0 +1,27 @@
+<div>下单 - 第3步</div>
+<div id="pregunta_faccion">
+  <p>你最喜欢的战团是哪一个？</p>
+  <select id="faccion_favorita">
+    <option value="0">请选择一个战团...</option>
+    <option value="space_marines">星际战士</option>
+    <option value="orks">兽人</option>
+    <option value="chaos">混沌</option>
+    <option value="eldar">艾尔达</option>
+  </select>
+  <br>
+
+  <!-- Aquí generaremos un input por cada producto -->
+  <div id="productos_a_valorar">
+    {{#array_productos}}
+    <div class="producto_valorar">
+      <p>{{NOMBRE}}</p>
+      <input type="number" class="puntuacion_producto" 
+             data-id-producto="{{PRODUCTO_ID}}" 
+             name="puntuacion_{{PRODUCTO_ID}}" 
+             min="0" max="5" step="0.1" placeholder="例如: 4.5">
+    </div>
+    {{/array_productos}}
+  </div>
+
+  <button style="padding: 10px" id="aceptar_paso_3">确认</button>
+</div>

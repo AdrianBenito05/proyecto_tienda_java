@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+  <link rel="stylesheet" th:href="@{../css/admin.css}">
+ <link rel="stylesheet" th:href="@{../css/menu.css}">
+</head>
+<body>
+
+<div th:insert="fragments/general.html :: menu"></div>
+
+<p style="text-align: center">Introduce los datos del nuevo producto:<p>
+
+<form action="#" th:action="guardarProducto" th:object="${nuevoProducto}" method="post" enctype="multipart/form-data">
+	Nombre: <input type="text" th:field="*{nombre}"/> <br>
+	<span style="color:red" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" ></span> 
+	<br>
+	Fabricante: <input type="text" th:field="*{fabricante}"/> <br>
+	<span style="color:red" th:if="${#fields.hasErrors('fabricante')}" th:errors="*{fabricante}" ></span>
+	<br> 
+	Medidas: <input type="text" th:field="*{medidas}"/> <br>
+	<span style="color:red" th:if="${#fields.hasErrors('medidas')}" th:errors="*{medidas}" ></span> 
+	<br>	
+	Material: <input type="text" th:field="*{material}"/> <br>
+	<span style="color:red" th:if="${#fields.hasErrors('material')}" th:errors="*{material}" ></span> 
+	<br>
+	Precio: <input type="number" step=".01" th:field="*{precio}"/> <br>
+	<span style="color:red" th:if="${#fields.hasErrors('precio')}" th:errors="*{precio}" ></span>
+	<br>
+	Descripcion: <textarea rows="3" cols="20" th:field="*{descripcion}"></textarea> <br>
+	<br>
+	Categoria: 
+	<select th:field="*{idCategoria}">
+		<option th:each="c : ${categorias}" th:text="${c.nombre}" th:value="${c.id}">
+	</select>
+	<br>
+	Miniatura: <input type ="file" th:field="*{imagen}">
+	<br>
+	
+	<input type="submit" value="REGISTRAR PRODUCTO">
+
+
+</form>
+
+</body>
+</html>

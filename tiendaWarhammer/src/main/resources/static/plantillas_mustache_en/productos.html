@@ -1,0 +1,20 @@
+<div>Store Product List</div>
+
+<!-- Displaying variables -->
+{{ mensaje_bienvenida }}
+
+<!-- Displaying arrays -->
+{{ #array_productos }}
+	<div>
+		Name: {{NOMBRE}} <br>
+		Price: {{PRECIO}} <br>
+		Description: {{DESCRIPCION}} <br>
+		<img src="mostrar_imagen?id={{ ID }}" alt="Image not loaded"  /> <br>
+		Dimensions: {{MEDIDAS}} <br>
+		Manufacturer: {{FABRICANTE}} <br>
+		Material: {{MATERIAL}} <br>
+		Category: {{NOMBRE_CATEGORIA}}<br>
+        Rating: {{mediaValoraciones}} <br>
+		<a href="#" class="enlace_comprar_producto" id-producto="{{ ID }}"  >ADD TO CART</a>	
+	</div>
+{{ /array_productos }}

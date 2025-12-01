@@ -1,0 +1,39 @@
+<div>下订单 - 第 3 步</div>
+<div>订单摘要：</div>
+
+<br>
+
+<div>订单产品：
+	{{#productos}}
+			名称：{{NOMBRE}} <br>
+			<img src="mostrar_imagen?id={{ PRODUCTO_ID }}" alt="图片未能加载" height="300px" /> <br>
+			价格：{{PRECIO}} <br>
+			数量：{{CANTIDAD}} <br>
+	{{/productos}}
+</div>
+
+<br>
+
+<div>配送信息：</div>
+<div style="margin: 10px">
+	全名：{{nombreCompleto}} <br>
+	地址：{{direccion}} <br>
+	省份：{{provincia}} <br>
+	门牌号：{{portal}} <br>
+	楼层：{{piso}} <br>
+	电话：{{telefono}} <br>
+</div>
+
+<div>支付信息：</div>
+<div style="margin: 10px">
+	卡片类型：{{tipoTarjeta}} <br>
+	持卡人姓名：{{titularTarjeta}} <br>
+	卡号：{{numeroTarjeta}} <br>
+</div>
+
+<div>最喜欢的派系</div>
+<div style="margin: 10px">
+	最喜欢的派系：{{faccion}}
+</div>
+
+<button style="padding: 10px" id="boton_confirmar_pedido">确认订单</button>

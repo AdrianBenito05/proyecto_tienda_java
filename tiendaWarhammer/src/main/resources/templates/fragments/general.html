@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+
+<div class="menu-container" th:fragment="menu">
+  <div class="volver-publica">
+    <a th:href="@{/}"><span th:text="#{subtitulo.volver}"></span></a>
+  </div>
+
+  <div class="titulo-bienvenida">
+    <span th:text="#{titulo.bienvenida}"></span>
+  </div>
+  
+  <div>
+  	<a href="?idioma=es" style = "text-decoration: none">    <span th:text="#{idioma.spain}"></span></a>
+  	<a href="?idioma=en" style = "text-decoration: none">    <span th:text="#{idioma.ingles}"></span></a>
+  	<a href="?idioma=ch" style = "text-decoration: none">    <span th:text="#{idioma.chino}"></span></a> 	
+  </div>
+
+  <div class="menu-nav">
+    <a th:href="obtenerProductos"><span th:text="#{enlaces.productos}"></span></a>
+    <a th:href="obtenerUsuarios">    <span th:text="#{enlaces.usuarios}"></span></a>
+    <a th:href="obtenerPedidos">    <span th:text="#{enlaces.pedidos}"></span></a>
+	<a th:href="@{/logoutAdmin}">    <span th:text="#{enlaces.sesion}"></span></a>
+    
+  </div>
+</div>
+
+
+</body>
+</html>

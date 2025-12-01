@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/inicio.css">
+
+</head>
+<body>
+
+<div class="header-top">
+  <a class="admin-link" href="admin/obtenerProductos">管理权限</a>
+  <div id="login_usuario">身份不明的用户</div>
+</div>
+
+<div class="welcome-banner">
+  欢迎来到商店
+  
+</div>
+    <div class="nav-menu">
+  	<a  href="?idioma=es">西班牙语</a>
+  	<a   href="?idioma=en">英语</a>
+  	<a   href="?idioma=ch">中国人</a>
+  </div>
+
+<div class="nav-menu">
+  <a id="enlace_productos" href="#">产品</a>
+  <a id="enlace_identificarme" href="#">认出我</a>
+  <a id="enlace_registrarme" href="#">登记</a>
+  <a  id="enlace_carrito" href="#">大车</a>
+</div>
+
+
+<div id="contenedor">
+
+</div>
+
+
+<!-- Incluir los archivos de Javascript necesarios -->
+<script  src="librerias_js/jquery.js" ></script>
+<script  src="librerias_js/mustache.js"></script>
+<script  src="javascript/globales.js"></script>
+<script>
+idioma = "_ch"
+</script>
+<script  src="javascript/cargar_plantillas.js"></script>
+<script  src="javascript/funciones_menu.js"></script>
+<script  src="javascript/main.js"></script>
+
+
+
+
+</body>
+</html>

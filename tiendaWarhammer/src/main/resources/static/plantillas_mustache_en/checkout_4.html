@@ -1,0 +1,39 @@
+<div>Place Order - Step 3</div>
+<div>Order Summary:
+
+<br>
+
+<div>Ordered Products: 
+	{{#productos}}
+			Name: {{NOMBRE}} <br>
+			<img src="mostrar_imagen?id={{ PRODUCTO_ID }}" alt="Image failed to load" height="300px"  /> <br>
+			Price: {{PRECIO}} <br>
+			Quantity: {{CANTIDAD}} <br>
+	{{/productos}}
+</div>
+
+<br>
+
+<div>Shipping Information: </div>
+<div style="margin: 10px">
+	Full Name: {{nombreCompleto}} <br>
+	Address: {{direccion}} <br>
+	Province: {{provincia}} <br>
+	Building: {{portal}} <br>
+	Floor: {{piso}} <br>
+	Phone: {{telefono}} <br>
+</div>
+
+<div>Payment Information: </div>
+<div style="margin: 10px">
+	Card Type: {{tipoTarjeta}} <br>
+	Cardholder Name: {{titularTarjeta}} <br>
+	Card Number: {{numeroTarjeta}} <br>
+</div>
+
+<div>Favorite Faction</div>
+<div style="margin: 10px">
+	Favorite Faction: {{faccion}}
+</div>
+
+<button style="padding: 10px" id="boton_confirmar_pedido">Confirm Order</button>
