@@ -26,8 +26,6 @@ Es un proyecto de ejemplo para demostrar la integración de **Java**, **Spring B
 ## Requisitos para ejecutar
 
 1. Tener instalado **Java 21** y **Eclipse IDE**.  
-2. Clonar o descargar el proyecto.  
-3. Abrir el proyecto en **Eclipse** y ejecutar la aplicación Spring Boot.  
-4. Acceder a la aplicación en `http://localhost:8080`.  
-
+2. Clonar o descargar el proyecto comprimido.  
+3. Abrir el proyecto en **Eclipse** y ejecutar la aplicación Spring Boot.
 
